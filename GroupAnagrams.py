@@ -1,16 +1,17 @@
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        y=[["".join(sorted(list(item))),item] for index,item in enumerate(strs)]
-        d=dict()
-        for i,j in y:
+    def groupAnagrams(self, strs):
+        y = [["".join(sorted(list(item))), item]
+             for index, item in enumerate(strs)]
+        d = dict()
+        for i, j in y:
             # print(i,j,d.get(i,[]))
-            d[i]=d.get(i,list())
+            d[i] = d.get(i, list())
             d[i].append(j)
             # print(d[i])
-        result=list()
+        result = list()
         print(d)
         for i in d:
-            res=list()
+            res = list()
             for j in d[i]:
                 # print(j)
                 res.append(j)
